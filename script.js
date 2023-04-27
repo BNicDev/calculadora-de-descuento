@@ -4,15 +4,17 @@ let price = document.querySelector('.product-price');
 let discount = document.querySelector('.discount');
 //button
 const buttonCalc = document.querySelector('.calc');
-
-//tomamos los values 
-let priceValue = price.value;
-let discountValue = discount.value;
+//p result
+const pResult = document.querySelector('.result-container')
 
 //escuchando el evento 
 buttonCalc.addEventListener('click', calcularDescuento)
 
 function calcularDescuento(){
-    console.log(priceValue);
-    console.log(discountValue);
+    //obtenemos los value de los input
+    let priceValue = price.value;
+    let discountValue = discount.value;
+    //calculamos el descuento del producto
+    const newPrice = (priceValue*(100-discountValue)/100);
+    pResult.innerText= "el nuevo precio con descuento es $" + newPrice
 }
