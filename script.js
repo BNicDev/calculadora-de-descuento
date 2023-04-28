@@ -15,6 +15,10 @@ function calcularDescuento(){
     let priceValue = price.value;
     let discountValue = discount.value;
     //calculamos el descuento del producto
-    const newPrice = (priceValue*(100-discountValue)/100);
-    pResult.innerText= "el nuevo precio con descuento es $" + newPrice
+    if(discountValue>60){
+        pResult.innerText="el valor de descuento es muy grande, no se puede realizar"
+    }else{
+        const newPrice = (priceValue*(100-discountValue)/100);
+        pResult.innerText= "El nuevo precio con Descuento es: $" + newPrice
+    }
 }
