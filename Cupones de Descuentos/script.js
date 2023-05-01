@@ -21,20 +21,18 @@ let priceValue = price.value;
 let discouncoupon = discount.value
 
 for(var i = 0; i<cupones.length; i++){
-    if(cupones[i]!= discouncoupon){
-        pResult.innerText= "El cupon ingresado no es valido!"
-    }else{
-        switch(cupones){
-            case cupones[0]:
-                const newPrice = (priceValue*(100-30)/100);
-                pResult.innerText= "El precio con el cupon es de : $" + newPrice;
-                break;
-            case cupones[1]:
-            const newPrice1 = (priceValue*(100-40)/100);
-            pResult.innerText= "El precio con el cupon es de : $" + newPrice1;
-            break;
-        }
+    if(cupones[0]==discouncoupon){
+        const newPrice = (priceValue*(100-30)/100);
+        pResult.innerText= "El precio con el cupon es de : $" + newPrice;
+    }else if(cupones[1]==discouncoupon || cupones[2]==discouncoupon){
+        const newPrice = (priceValue*(100-40)/100);
+        pResult.innerText= "El precio con el cupon es de : $" + newPrice;
+    }else if(cupones[3]==discouncoupon){
+        const newPrice = (priceValue*(100-60)/100);
+        pResult.innerText= "El precio con el cupon es de : $" + newPrice;
+    }
+    else{
+        pResult.innerText= "El cupon ingresado no es valido";
     }
 }
 }
-
