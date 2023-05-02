@@ -17,8 +17,8 @@ const cupones =[
  ]
 
 function cuponDescuento(){
-let priceValue = price.value;
-let discouncoupon = discount.value
+let priceValue = Number(price.value);
+let discouncoupon = discount.value;
 
 for(var i = 0; i<cupones.length; i++){
     if(cupones[0]==discouncoupon){
@@ -35,4 +35,26 @@ for(var i = 0; i<cupones.length; i++){
         pResult.innerText= "El cupon ingresado no es valido";
     }
 }
+
+// let descuento;
+
+//     switch(discouncoupon){
+//         case "hoy30":
+//             descuento = 30;
+//             break;
+//         case "oferton40":
+//             descuento = 40;
+//             break;
+//         case "run":
+//             descuento = 50;
+//             break;
+//         case "michis":
+//             descuento = 60;
+//             break;
+//         default:
+//             pResult.innerText= "El cupon ingresado no es valido";
+// }
+// const newPrice = (priceValue * (100 - descuento)) / 100;
+
+// pResult.innerText = 'El nuevo precio con descuento es $' + newPrice;
 }
